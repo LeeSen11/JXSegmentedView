@@ -34,6 +34,9 @@ open class JXSegmentedTitleImageCell: JXSegmentedTitleCell {
 
         let imageSize = myItemModel.imageSize
         switch myItemModel.titleImageType {
+        case .topRightImage:
+            titleLabel.center = CGPoint(x: contentView.bounds.size.width/2, y: contentView.bounds.size.height/2)
+            imageView.center = CGPoint(x: titleLabel.frame.maxX, y: titleLabel.frame.minY)
             case .topImage:
                 let contentHeight = imageSize.height + myItemModel.titleImageSpacing + titleLabel.bounds.size.height
                 imageView.center = CGPoint(x: contentView.bounds.size.width/2, y: (contentView.bounds.size.height - contentHeight)/2 + imageSize.height/2)

@@ -117,9 +117,12 @@ class CellCustomizeViewController: UITableViewController {
             let dataSource = JXSegmentedTitleImageDataSource()
             dataSource.isTitleColorGradientEnabled = true
             dataSource.titles = titles
-            dataSource.titleImageType = .rightImage
+            dataSource.titleImageType = .topRightImage
             dataSource.isImageZoomEnabled = true
-            dataSource.normalImageInfos = ["monkey", "frog", "dog", "pig", "sheep", "chicken", "horse", "cow", "elephant", "dragon"]
+            dataSource.isItemSpacingAverageEnabled = false
+            dataSource.itemSpacing = 20
+            dataSource.imageSize = CGSize(width: 20.0, height: 20.0)
+            dataSource.normalImageInfos = ["monkey", "", "", "", "", "", "", "", "", ""] //["monkey", "frog", "dog", "pig", "sheep", "chicken", "horse", "cow", "elephant", "dragon"]
             dataSource.loadImageClosure = {(imageView, normalImageInfo) in
                 //如果normalImageInfo传递的是图片的地址，你需要借助SDWebImage等第三方库进行图片加载。
                 //加载bundle内的图片，就用下面的方式，内部默认也采用该方法。

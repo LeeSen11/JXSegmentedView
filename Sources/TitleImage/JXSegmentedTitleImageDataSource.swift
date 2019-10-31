@@ -9,6 +9,7 @@
 import UIKit
 
 public enum JXSegmentedTitleImageType {
+    case topRightImage
     case topImage
     case leftImage
     case bottomImage
@@ -67,6 +68,11 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
         var itemWidth = super.preferredSegmentedView(segmentedView, widthForItemAt: index)
         if itemContentWidth == JXSegmentedViewAutomaticDimension {
             switch titleImageType {
+            case .topRightImage:
+                if index == 0 {
+                    itemWidth += imageSize.width / 2.0
+                }
+                itemWidth += titleImageSpacing
             case .leftImage, .rightImage:
                 itemWidth += titleImageSpacing + imageSize.width
             case .topImage, .bottomImage:
