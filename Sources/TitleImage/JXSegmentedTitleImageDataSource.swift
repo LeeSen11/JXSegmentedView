@@ -72,7 +72,6 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
                 if index == 0 {
                     itemWidth += imageSize.width / 2.0
                 }
-                itemWidth += titleImageSpacing
             case .leftImage, .rightImage:
                 itemWidth += titleImageSpacing + imageSize.width
             case .topImage, .bottomImage:
