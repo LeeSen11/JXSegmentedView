@@ -69,8 +69,10 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
         if itemContentWidth == JXSegmentedViewAutomaticDimension {
             switch titleImageType {
             case .topRightImage:
-                if index == 0 {
-                    itemWidth += imageSize.width / 2.0
+                if let images = normalImageInfos {
+                    if !images[index].isEmpty {
+                        itemWidth += imageSize.width / 2.0
+                    }
                 }
             case .leftImage, .rightImage:
                 itemWidth += titleImageSpacing + imageSize.width
