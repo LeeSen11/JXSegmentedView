@@ -71,7 +71,7 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
             case .topRightImage:
                 if let images = normalImageInfos {
                     if !images[index].isEmpty {
-                        itemWidth += imageSize.width / 2.0
+                        itemWidth += (imageSize.width / 2.0 + 3.0)
                     }
                 }
             case .leftImage, .rightImage:
