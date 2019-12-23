@@ -15,6 +15,7 @@ open class JXSegmentedTitleImageCell: JXSegmentedTitleCell {
     open override func prepareForReuse() {
         super.prepareForReuse()
 
+        imageView.image = nil
         currentImageInfo = nil
     }
 
