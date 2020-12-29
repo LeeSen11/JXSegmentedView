@@ -17,7 +17,7 @@ class NaviSegmentedControlViewController: ContentBaseViewController {
 
         let titles = ["吃饭🍚", "睡觉😴"]
         let titleDataSource = JXSegmentedTitleDataSource()
-        titleDataSource.itemContentWidth = totalItemWidth/CGFloat(titles.count)
+        titleDataSource.itemWidth = totalItemWidth/CGFloat(titles.count)
         titleDataSource.titles = titles
         titleDataSource.isTitleMaskEnabled = true
         titleDataSource.titleNormalColor = UIColor.red
@@ -35,7 +35,7 @@ class NaviSegmentedControlViewController: ContentBaseViewController {
 
         let indicator = JXSegmentedIndicatorBackgroundView()
         indicator.indicatorHeight = 30
-        indicator.backgroundWidthIncrement = 0
+        indicator.indicatorWidthIncrement = 0
         indicator.indicatorColor = UIColor.red
         segmentedView.indicators = [indicator]
     }

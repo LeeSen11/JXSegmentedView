@@ -85,7 +85,7 @@ SegmentedControl<br/>参考[`SegmentedControlViewController`](https://github.com
 
 ## 要求
 
-- iOS 8.0+
+- iOS 9.0+
 - Xcode 9+
 - Swift 5.0
 
@@ -110,6 +110,19 @@ end
 github "pujiaxin33/JXSegmentedView"
 ```
 然后执行`carthage update --platform iOS` 即可
+
+### Swift Package Manager
+
+1.在Package.swift文件添加如下代码:
+```
+dependencies: [
+  .package(url: "https://github.com/pujiaxin33/JXSegmentedView.git", from: "1.2.1")
+]
+```
+2.使用命令行构建:
+```
+$ swift build
+```
 
 ## 使用
 

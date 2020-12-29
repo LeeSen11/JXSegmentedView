@@ -77,6 +77,10 @@ class CellCustomizeViewController: UITableViewController {
             dataSource.isTitleStrokeWidthEnabled = true
             dataSource.isSelectedAnimable = true
             dataSource.titles = titles
+            let indicator = JXSegmentedIndicatorLineView()
+            indicator.indicatorWidth = JXSegmentedViewAutomaticDimension
+            vc.segmentedView.indicators = [indicator]
+
             vc.segmentedDataSource = dataSource
         case "大小缩放+Cell宽度缩放":
             //高仿汽车之家
@@ -90,6 +94,11 @@ class CellCustomizeViewController: UITableViewController {
             dataSource.isSelectedAnimable = true
             dataSource.isItemWidthZoomEnabled = true
             dataSource.titles = titles
+
+            let indicator = JXSegmentedIndicatorLineView()
+            indicator.indicatorWidth = JXSegmentedViewAutomaticDimension
+            vc.segmentedView.indicators = [indicator]
+
             vc.segmentedDataSource = dataSource
         case "数字":
             //配置数据源
@@ -161,7 +170,7 @@ class CellCustomizeViewController: UITableViewController {
             dataSource.isTitleColorGradientEnabled = true
             dataSource.titleSelectedColor = UIColor.red
             dataSource.titleNumberOfLines = 2
-            dataSource.itemContentWidth = 60
+            dataSource.itemWidth = 60
             dataSource.titles = ["猴哥 monkey", "青蛙王子 frog", "旺财 dot", "粉红猪 pig", "喜羊羊 sheep", "黄焖鸡 chicken", "小马哥 horse", "牛魔王 cow", "大象先生 elepant", "神龙 dragon"]
             vc.segmentedDataSource = dataSource
         case "多行富文本":
