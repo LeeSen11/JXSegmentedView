@@ -71,7 +71,7 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
             case .topRightImage:
                 if let images = normalImageInfos {
                     if !images[index].isEmpty {
-                        itemWidth += (imageSize.width / 2.0 + 3.0)
+                        width += (imageSize.width / 2.0 + 3.0)
                     }
                 }
             case .leftImage, .rightImage:
@@ -90,6 +90,12 @@ open class JXSegmentedTitleImageDataSource: JXSegmentedTitleDataSource {
     public override func segmentedView(_ segmentedView: JXSegmentedView, widthForItemContentAt index: Int) -> CGFloat {
         var width = super.segmentedView(segmentedView, widthForItemContentAt: index)
         switch titleImageType {
+        case .topRightImage:
+            if let images = normalImageInfos {
+                if !images[index].isEmpty {
+                    width += (imageSize.width / 2.0 + 3.0)
+                }
+            }
         case .leftImage, .rightImage:
             width += titleImageSpacing + imageSize.width
         case .topImage, .bottomImage:
